@@ -7,8 +7,10 @@ import variants from "../utils/variants";
 
 const Services = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const handleResize = () => {
       setIsMobileOrTablet(window.innerWidth < 1024); // sm and md devices
     };
@@ -38,37 +40,52 @@ const Services = () => {
           </div>
         </motion.div>
 
-
         {/* services card */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6'>
           {
             servicesData.map((service, index) => (
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.1 }}
-                variants={isMobileOrTablet ? variants("bottom", 0.2) : variants("left", 0.2)} 
-                key={index} 
-                className={`flex flex-col sm:flex-row md:justify-between md:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-3xl border border-[#191A23] cursor-pointer shadow-lg shadow-gray-400/50 ${service.backgroundColor} ${service.textColor}`}
-              >
-                <div className='md:w-1/2 w-full flex flex-col h-full justify-between gap-3 sm:gap-4'>
-                  <button className={`text-lg sm:text-xl py-1.5 font-semibold mb-2 rounded-lg w-full sm:w-60 ${service.foregroundColor}`}>{service.title}</button>
-                  <a href="#" className={`flex items-center justify-center sm:justify-start gap-4 py-2 rounded-md hover:bg-opacity-70 hover:text-black/70`}>
-                    <img src={LinkIcon} alt="" className='size-6 rounded-full' />
-                    <span className={`text-base sm:text-lg font-medium ${index === 2 || index === 5 ? 'text-white' : 'text-black'}`}>Learn More</span>
-                  </a>
-
+              isClient && isMobileOrTablet ? (
+                <div 
+                  key={index} 
+                  className={`flex flex-col sm:flex-row md:justify-between md:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-3xl border border-[#191A23] cursor-pointer shadow-lg shadow-gray-400/50 ${service.backgroundColor} ${service.textColor}`}
+                >
+                  <div className='md:w-1/2 w-full flex flex-col h-full justify-between gap-3 sm:gap-4'>
+                    <button className={`text-lg sm:text-xl py-1.5 font-semibold mb-2 rounded-lg w-full sm:w-60 ${service.foregroundColor}`}>{service.title}</button>
+                    <a href="#" className={`flex items-center justify-center sm:justify-start gap-4 py-2 rounded-md hover:bg-opacity-70 hover:text-black/70`}>
+                      <img src={LinkIcon} alt="" className='size-6 rounded-full' />
+                      <span className={`text-base sm:text-lg font-medium ${index === 2 || index === 5 ? 'text-white' : 'text-black'}`}>Learn More</span>
+                    </a>
+                  </div>
+                  {/* image */}
+                  <div className='md:w-1/2 w-full order-first md:order-last'>
+                    <img src={service.image} alt="" className='w-full object-cover rounded-2xl mb-4'/>
+                  </div>
                 </div>
-                {/* image */}
-                <div className='md:w-1/2 w-full order-first md:order-last'>
-                  <img src={service.image} alt="" className='w-full object-cover rounded-2xl mb-4'/>
-                </div>
-              </motion.div>
+              ) : (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ amount: 0.1 }}
+                  variants={isMobileOrTablet ? variants("bottom", 0.2) : variants("left", 0.2)} 
+                  key={index} 
+                  className={`flex flex-col sm:flex-row md:justify-between md:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-3xl border border-[#191A23] cursor-pointer shadow-lg shadow-gray-400/50 ${service.backgroundColor} ${service.textColor}`}
+                >
+                  <div className='md:w-1/2 w-full flex flex-col h-full justify-between gap-3 sm:gap-4'>
+                    <button className={`text-lg sm:text-xl py-1.5 font-semibold mb-2 rounded-lg w-full sm:w-60 ${service.foregroundColor}`}>{service.title}</button>
+                    <a href="#" className={`flex items-center justify-center sm:justify-start gap-4 py-2 rounded-md hover:bg-opacity-70 hover:text-black/70`}>
+                      <img src={LinkIcon} alt="" className='size-6 rounded-full' />
+                      <span className={`text-base sm:text-lg font-medium ${index === 2 || index === 5 ? 'text-white' : 'text-black'}`}>Learn More</span>
+                    </a>
+                  </div>
+                  {/* image */}
+                  <div className='md:w-1/2 w-full order-first md:order-last'>
+                    <img src={service.image} alt="" className='w-full object-cover rounded-2xl mb-4'/>
+                  </div>
+                </motion.div>
+              )
             ))
           }
         </div>
-
-
       </div>
     </section>
   );
