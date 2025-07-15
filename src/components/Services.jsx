@@ -14,7 +14,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.1 }}
-          variants={variants("bottom", 0.2)}
+          variants={variants("bottom", 0.1)}
           className='flex flex-col md:flex-row gap-4 mb-12'
         >
           <div className='flex-shrink-0 bg-primary text-black py-2 px-16 rounded-md'>
@@ -35,7 +35,7 @@ const Services = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ amount: 0.1 }}
-                variants={variants("bottom", 0.2)}
+                variants={variants("bottom", 0.05)}
                 key={index} 
                 className={`flex flex-col sm:flex-row md:justify-between md:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-3xl border border-[#191A23] cursor-pointer shadow-lg shadow-gray-400/50 ${service.backgroundColor} ${service.textColor}`}
               >
