@@ -123,7 +123,7 @@ const Price = () => {
                     </div>
                   )}
                   <hr className="border-gray-300" />
-                  <div className="flex justify-between text-lg font-bold text-primary">
+                  <div className="flex justify-between text-lg font-bold text-black">
                     <span>Total Monthly Cost</span>
                     <span>₹{contentPricing.total.toLocaleString()}</span>
                   </div>
@@ -150,7 +150,7 @@ const Price = () => {
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-bold text-primary">₹{item.price.toLocaleString()}</span>
+                  <span className="text-2xl font-bold text-black">₹{item.price.toLocaleString()}</span>
                 </div>
               </motion.div>
             ))}
@@ -174,7 +174,7 @@ const Price = () => {
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-bold text-primary">₹{item.price.toLocaleString()}</span>
+                  <span className="text-2xl font-bold text-black">₹{item.price.toLocaleString()}</span>
                   <p className="text-xs text-gray-500">per month</p>
                 </div>
               </motion.div>
@@ -199,7 +199,7 @@ const Price = () => {
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-bold text-primary">₹{item.price.toLocaleString()}</span>
+                  <span className="text-2xl font-bold text-black">₹{item.price.toLocaleString()}</span>
                   <p className="text-xs text-gray-500">per month</p>
                 </div>
               </motion.div>

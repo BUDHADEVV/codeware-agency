@@ -25,6 +25,7 @@ function App() {
       <CTA/>
       <Price/>
       <CaseStudies/>
+      
       <Working/>
       <Testimonials/>
       <Contact/>
