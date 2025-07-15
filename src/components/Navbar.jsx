@@ -6,9 +6,10 @@ import { MdOutlineClose } from 'react-icons/md';
 const menuItems = [
   { name: 'About us',      href: '#about' },
   { name: 'Services',      href: '#services' },
+  { name: 'Price',         href: '#pricing' },
   { name: 'Use Cases',     href: '#use-cases' },
   { name: 'Testimonials',  href: '#testimonials' },
-  { name: 'Contact',  href: '#contact' }
+  { name: 'Contact',       href: '#contact' }
 ];
 
 const Navbar = () => {

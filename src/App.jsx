@@ -10,6 +10,7 @@ import Navbar from './components/Navbar'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Working from './components/Working'
+import Price from './components/Price'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Hero/>
       <Services/>
       <CTA/>
+      <Price/>
       <CaseStudies/>
       <Working/>
       <Testimonials/>
