@@ -11,6 +11,7 @@ const FooterContact = () => {
           </button> */}
 
           <div className="text-white space-y-2">
+            <p className="underline underline-offset-4">Contact</p>
             <p>
               <strong>Email:</strong>
               <a
@@ -38,7 +39,7 @@ const FooterContact = () => {
 
         </div>
 
-              <div className="flex-1 bg-[#292A32] justify-center items-center p-8 rounded-md">
+              <div className="flex-1 bg-[#292A32] justify-center items-center p-8 rounded-md hidden md:flex">
                   <form className="flex flex-col justify-center items-center h-20 md:flex-row gap-4">
                       <input
                           type="email"
